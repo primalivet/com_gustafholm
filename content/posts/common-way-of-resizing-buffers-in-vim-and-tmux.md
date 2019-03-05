@@ -1,4 +1,4 @@
-body
++++
 title = "Common Way of Resizing Windows/Panes in Vim and Tmux"
 date = "2018-11-02T11:31:22+01:00"
 draft = false
