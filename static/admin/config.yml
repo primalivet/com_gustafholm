@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: gitlab
   branch: master
   repo: primalivet/com_gustafholm
 
