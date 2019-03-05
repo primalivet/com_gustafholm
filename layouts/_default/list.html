@@ -1,14 +1,22 @@
 {{ partial "header.html" . }}
 
-{{ with .Site.GetPage "section" "posts" }}<h1>{{ .Title }}</h1>{{ end }}
-<ul>
-  {{ range .Pages }}
-  <li>
-    <a href="{{.Permalink}}">{{.Title}}</a>
-    <br />
-    <small class="label dimmed">{{.Date.Format "2006-01-02" }}</small>
-  </li>
+<section>
+  {{ with .Site.GetPage "section" "posts" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
   {{ end }}
-</ul>
+  <hr>
+  {{ range .Pages }}
+    <h2><a href="{{.Permalink}}">{{.Title}}</a></h2>
+    <div class="meta">
+      <span class="label dimmed">{{.Date.Format "2006-01-02" }}</span>
+<span class="label dimmed"> &middot; {{ .WordCount }} words</span>
+    </div>
+    <p>
+      {{ .Summary }} <a href="{{ .Permalink }}">Continue reading...</a>
+    </p>
+    <hr>
+  {{ end }}
+</section>
 
 {{ partial "footer.html" . }}

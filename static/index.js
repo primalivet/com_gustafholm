@@ -38,9 +38,11 @@ const replaceElement = target => newElement => {
  */
 
 
-const page = document.body.innerHTML
-const readTime = getReadTime(page)
+if (document.body.classList.contains('page')) {
+  const page = document.body.innerHTML
+  const readTime = getReadTime(page)
 
-const insertReadTime = compose(appendElement('.meta'), createElement('span')({ class: 'label dimmed' }))
+  const insertReadTime = compose(appendElement('.meta'), createElement('span')({ class: 'label dimmed' }))
 
-insertReadTime(` &middot; ${readTime} minute read`)
+  insertReadTime(` &middot; ${readTime} minute read`)
+}
