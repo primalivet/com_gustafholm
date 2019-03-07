@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+  {{ range .Pages }}
+  <article>
+    <h2 class="title"><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
+    <div class="meta">
+      <span class="date label dimmed">{{.Date.Format "2006-01-02" }}</span>
+      <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
+    </div>
+    <p>
+      {{ .Summary }} <a href="{{ .Permalink }}">Continue reading...</a>
+    </p>
+    </article>
+    <hr>
+  {{ end }}
+
+{{ end }}

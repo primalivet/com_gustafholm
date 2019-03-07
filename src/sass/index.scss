@@ -1,0 +1,135 @@
+$white:  hsl(0,    0%,   100%);
+$black:  hsl(0,    0%,   0%);
+$blue:   hsl(206,  69%,  48%);
+
+
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+
+html {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 700px) {
+  html {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 1.5rem;
+  }
+}
+
+body {
+  background: $white;
+  color: $black;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    margin: 2rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    margin: 0;
+  }
+}
+
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.25em; }
+h3 { font-size: 1.125em; }
+
+h4,h5,h6 { font-size: 1em; }
+
+
+
+@media screen and (min-width: 700px) {
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.25em; }
+  h4,h5,h6 { font-size: 1.125em; }
+}
+
+@media screen and (min-width: 1000px) {
+  h1 { font-size: 2.25em; }
+  h2 { font-size: 1.75em; }
+  h3 { font-size: 1.5em; }
+  h4,h5,h6 { font-size: 1.25em; }
+}
+
+section,
+article {
+  max-width: 42rem;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  section,
+  article {
+    margin: 3rem;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: $black;
+  opacity: 0.15;
+  height: 2px;
+  border:none;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+a {
+  color: $black;
+}
+
+a:visited {
+  color: $black;
+}
+
+a:active {
+  color: $black;
+}
+
+a:hover,
+a:focus {
+  color: $black;
+}
+
+@media screen and (min-width: 700px) {
+  .col-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.875em;
+}
+
+.dimmed {
+  opacity: 0.5;
+}

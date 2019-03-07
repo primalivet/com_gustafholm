@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article>
+  <p><a href="/" class="label dimmed">Back</a></p>
+  <h1 class="title">{{ .Title }}</h1>
+  <p class="meta">
+    <span class="date label dimmed">{{ .Date.Format "2006-01-02" }}</span>
+    <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
+  </p>
+  {{ .Content }}
+</article>
+<hr>
+<section class="col-two">
+  {{ with .PrevInSection }}
+  <div>
+    <span class="label dimmed">Previous</span>
+    <br> 
+    <a href="{{.Permalink}}"> {{.Title}}</a>
+  </div>
+  {{ end }}
+  {{ with .NextInSection }}
+  <div>
+    <span class="label dimmed">Next</span>
+    <br>
+    <a href="{{.Permalink}}"> {{.Title}}</a>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

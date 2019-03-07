@@ -13,6 +13,7 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Expiry date", name: "expirydate", widget: "datetime" }
       - { label: "Draft", name: "draft", widget: "boolean" }
       - { label: "Body", name: "body", widget: "markdown" }
