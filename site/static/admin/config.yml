@@ -3,13 +3,14 @@ backend:
   branch: master
   repo: primalivet/com_gustafholm
 
-media_folder: "static/images/uploads"
+site_url: https://gustafholm.com
+media_folder: "site/static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/posts"
+    folder: "site/content/posts"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
