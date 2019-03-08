@@ -1,6 +1,6 @@
 ---
 title: Useful GNU Readline Settings
-publishdate: 2019-03-08T12:42:30.607Z
+publishdate: 2018-12-25T12:42:30.607Z
 image: gnu-readline-settings.png
 draft: false
 ---
