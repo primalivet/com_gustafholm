@@ -1,8 +1,9 @@
-+++
-title = "Common Way of Resizing Windows/Panes in Vim and Tmux"
-date = "2018-11-02T11:31:22+01:00"
-draft = false
-+++
+---
+title: Common Way of Resizing Windows/Panes in Vim and Tmux
+publishdate: 2019-03-08T12:53:16.359Z
+image: resizing-in-vim-and-tmux.png
+draft: false
+---
 
 It's not often, but once in a while I want to resize a window in Vim or a pane in Tmux. And every time I'm thinking that I should rebind some keys to make the two programs more similar. So in Vim I use the default bindings for resizing buffers. But I've tweaked them a bit.
 
