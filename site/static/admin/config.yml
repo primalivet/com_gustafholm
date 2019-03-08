@@ -24,6 +24,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Draft", name: "draft", widget: "boolean" }
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Draft Posts"
@@ -35,5 +36,6 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Image", name: "image", widget: "image" }
       - { label: "Draft", name: "draft", widget: "boolean" }
       - { label: "Body", name: "body", widget: "markdown" }
