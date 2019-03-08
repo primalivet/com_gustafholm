@@ -8,7 +8,7 @@
   </p>
   {{ with .Params.image }}
   <p><img
-  src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ .Params.image }}"></p>
+  src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}"></p>
   {{ end }}
   {{ .Content }}
 </article>
