@@ -1,6 +1,6 @@
 ---
 title: Common Way of Resizing Windows/Panes in Vim and Tmux
-publishdate: 2019-03-08T12:53:16.359Z
+publishdate: 2018-12-18T12:53:16.359Z
 image: resizing-in-vim-and-tmux.png
 draft: false
 ---
