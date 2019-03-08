@@ -8,13 +8,25 @@ media_folder: "site/static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - label: "Published Posts"
+    label_singular: "Post"
+    name: "published_posts"
     folder: "site/content/posts"
     create: true
+    filter: { field: "draft", value: false }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
-      - { label: "Expiry date", name: "expirydate", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Draft Posts"
+    label_singular: "Post"
+    name: "draft_posts"
+    folder: "site/content/posts"
+    create: true
+    filter: { field: "draft", value: true }
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "publishdate", widget: "datetime" }
       - { label: "Draft", name: "draft", widget: "boolean" }
       - { label: "Body", name: "body", widget: "markdown" }
