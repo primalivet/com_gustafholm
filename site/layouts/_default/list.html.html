@@ -8,10 +8,9 @@
       <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
     </div>
     <p>
-      {{ .Summary }} <a href="{{ .Permalink }}">Continue reading...</a>
+      {{ .Summary }} <a href="{{ .RelPermalink }}">Continue reading...</a>
     </p>
     </article>
-    <hr>
   {{ end }}
 
 {{ end }}

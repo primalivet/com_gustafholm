@@ -7,25 +7,23 @@
     <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
   </p>
   {{ with .Params.image }}
-  <p><img
-  src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}"></p>
+  <img class="featured-image" src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
   {{ end }}
   {{ .Content }}
 </article>
-<hr>
 <section class="col-two">
   {{ with .PrevInSection }}
   <div>
     <span class="label dimmed">Previous</span>
     <br> 
-    <a href="{{.Permalink}}"> {{.Title}}</a>
+    <a href="{{.RelPermalink}}"> {{.Title}}</a>
   </div>
   {{ end }}
   {{ with .NextInSection }}
   <div>
     <span class="label dimmed">Next</span>
     <br>
-    <a href="{{.Permalink}}"> {{.Title}}</a>
+    <a href="{{.RelPermalink}}"> {{.Title}}</a>
   </div>
   {{ end }}
 </div>
