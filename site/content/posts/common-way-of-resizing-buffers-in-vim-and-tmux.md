@@ -30,6 +30,6 @@ bind-key -r ‘<’ resize-pane -L 10
 bind-key -r ‘>’ resize-pane -R 10
 ```
 
-The `-r` flag passed into the binding makes it repeatable. So when you press your prefix, you have a certain time to hammer > for example to make the pane increase to the right. The time you got depends on your `repeat-time` option which defaults to 500 milliseconds.
+The `-r` flag passed into the binding makes it repeatable. So when you press your prefix, you have a certain time to hammer `>` for example to make the pane increase to the right. The time you got depends on your `repeat-time` option which defaults to 500 milliseconds.
 
 Thanks for reading 🙌👋
