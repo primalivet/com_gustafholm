@@ -7,6 +7,13 @@ site_url: https://gustafholm.com
 media_folder: "site/static/images/uploads"
 public_folder: "/images/uploads"
 
+media_library:
+  name: cloudinary
+  output_filename_only: true
+  config:
+    cloud_name: primalivet
+    api_key: 252849228869977
+
 collections:
   - label: "Published Posts"
     label_singular: "Post"

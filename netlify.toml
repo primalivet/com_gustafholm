@@ -1,5 +1,6 @@
 [build.enviroment]
   NPM_VERSION = "6.4.1"
+  HUGO_VERSION = "0.54"
 
 [build]
   command = "npm run build"

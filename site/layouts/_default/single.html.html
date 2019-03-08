@@ -6,6 +6,10 @@
     <span class="date label dimmed">{{ .Date.Format "2006-01-02" }}</span>
     <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
   </p>
+  {{ with .Params.image }}
+  <p><img
+  src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ .Params.image }}"></p>
+  {{ end }}
   {{ .Content }}
 </article>
 <hr>
