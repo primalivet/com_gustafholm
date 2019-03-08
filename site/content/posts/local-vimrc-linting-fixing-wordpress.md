@@ -1,8 +1,8 @@
-+++
-title = "Setup Ale for Project Local Linting and Fixing in Vim"
-date = "2018-11-02T08:00:44+01:00"
-draft = false
-+++
+---
+title: Setup Ale for Project Local Linting and Fixing in Vim
+publishdate: 2019-03-08T13:28:43.454Z
+draft: true
+---
 
 Stuff like linting and fixing can be a hustle in any enviroment. In
 Vim, most humans tend to use [Ale](https://github.com/w0rp/ale), an async
