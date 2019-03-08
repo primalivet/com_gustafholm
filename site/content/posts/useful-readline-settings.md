@@ -1,8 +1,9 @@
-+++
-title = "Useful Readline Settings"
-date = "2018-11-02T09:56:53+01:00"
-draft = false
-+++
+---
+title: Useful Readline Settings
+publishdate: 2019-03-08T12:42:30.607Z
+image: gnu-readline-settings.png
+draft: false
+---
 
 I thought I would share some of the settings found in my `.inputrc` 
 [GNU Readline](https://www.gnu.org/software/readline/) configuration file. 
