@@ -5,28 +5,10 @@
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@primalivet">
-    <meta name="twitter:creator" content="@primalivet">
     
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="{{ .Title }}">
-    <meta property="og:title" content="{{ .Title }}">
-    {{ if .IsPage }}
-    <meta property="og:description" content="{{ .Summary }}">
-    {{ else }}
-    <meta property="og:description" content="{{ .Site.Params.description }}">
-    {{ end }}
-
-
-    {{ if not .IsPage }}
-    <meta property="og:type" content="website">
-    {{ else }}
-    <meta property="og:type" content="article">
-    <meta property="article:author" content="Gustaf Holm">
-    <meta property="article:published_time" content="{{ .Page.Date }}">
-    {{ end }}
+    {{ partial "og-general.html" . }}
+    {{ partial "og-twitter.html" . }}
+    {{ partial "gtm-script.html" . }}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
     {{ $style := .Site.Data.webpack.main }}
@@ -35,6 +17,7 @@
     {{ end }}
   </head>
   <body class="{{ .Kind }}">
+    {{ partial "gtm-noscript.html" }}
     {{ block "main" . }}
     {{ end }}
 
