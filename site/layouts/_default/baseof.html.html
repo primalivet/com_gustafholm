@@ -10,7 +10,6 @@
     {{ partial "og-twitter.html" . }}
     {{ partial "gtm-script.html" . }}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
     {{ $style := .Site.Data.webpack.main }}
     {{ with $style.css }}
     <link rel="stylesheet" href="{{ relURL . }}" />

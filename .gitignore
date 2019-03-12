@@ -2,6 +2,9 @@ dist
 # Created by https://www.gitignore.io/api/node,hugo
 # Edit at https://www.gitignore.io/?templates=node,hugo
 
+# webpack dist filenames reference
+site/data/webpack.json
+
 ### Hugo ###
 # gitginore template for Hugo projects
 # website: https://gohugo.io
