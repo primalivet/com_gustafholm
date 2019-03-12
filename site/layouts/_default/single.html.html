@@ -1,30 +1,28 @@
 {{ define "main" }}
+<nav><a href="/" class="upper bold dimmed">gustafholm.com</a></nav>
 <article>
-  <p><a href="/" class="label dimmed">Back</a></p>
-  <h1 class="title">{{ .Title }}</h1>
+  <h1 class="upper">{{ .Title }}</h1>
   <p class="meta">
-    <span class="date label dimmed">{{ .PublishDate.Format "2006-01-02" }}</span>
-    <span class="word-count label dimmed"> &middot; {{ .WordCount }} words</span>
+    <span class="date upper bold dimmed">{{ .PublishDate.Format "2006-01-02" }}</span>
+    <span class="word-count upper bold dimmed"> &middot; {{ .WordCount }} words</span>
   </p>
   {{ with .Params.image }}
-  <img class="featured-image" src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
+  <img src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
   {{ end }}
   {{ .Content }}
 </article>
-<section class="col-two">
+<nav class="grid-2">
   {{ with .PrevInSection }}
   <div>
-    <span class="label dimmed">Previous</span>
-    <br> 
-    <a href="{{.RelPermalink}}"> {{.Title}}</a>
+    <span class="upper bold dimmed">Previous</span><br> 
+    <a href="{{.RelPermalink}}" rel="prev"> {{.Title}}</a>
   </div>
   {{ end }}
   {{ with .NextInSection }}
   <div>
-    <span class="label dimmed">Next</span>
-    <br>
-    <a href="{{.RelPermalink}}"> {{.Title}}</a>
+    <span class="upper bold dimmed">Next</span><br>
+    <a href="{{.RelPermalink}}" rel="next"> {{.Title}}</a>
   </div>
   {{ end }}
-</div>
+</nav>
 {{ end }}

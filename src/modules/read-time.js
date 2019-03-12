@@ -35,7 +35,7 @@ export const printArticleReadTime = a => {
     compose(
       appendElement(t),
       setInnerHTML(`&middot; ${rt} minute read`),
-      setAttributes({ class: 'word-count label dimmed' }),
+      setAttributes({ class: 'word-count upper bold dimmed' }),
       createElement
     )('span')
   }

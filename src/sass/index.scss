@@ -26,20 +26,33 @@ html {
   }
 }
 
-article,
-section {
+body {
   max-width: 42rem;
   margin: 2em;
 }
 
 @media screen and (min-width: 700px) {
-  article,
-  section {
+  body {
     margin: 4rem;
   }
 }
 
-h1 { font-size: 1.5em; }
+article,
+section {
+  margin: 2em 0;
+}
+
+@media screen and (min-width: 700px) {
+  article,
+  section {
+    margin: 4rem 0;
+  }
+}
+
+h1 { 
+  font-size: 1.5em; 
+  line-height: 1.2;
+}
 h2 { font-size: 1.25em; }
 h3 { font-size: 1.125em; }
 
@@ -59,10 +72,6 @@ h4,h5,h6 { font-size: 1em; }
   h4,h5,h6 { font-size: 1.25em; }
 }
 
-.title {
-  text-transform: uppercase;
-  line-height: 1.2;
-}
 
 hr {
   margin-top: 2rem;
@@ -107,33 +116,23 @@ blockquote {
 
 a {
   color: $black;
-}
-
-a:visited {
-  color: $black;
-}
-
-a:active {
-  color: $black;
-}
-
-a:hover,
-a:focus {
-  color: $black;
+  text-decoration: underline hsla(0,0%,0%,0.25);
 }
 
 @media screen and (min-width: 700px) {
-  .col-two {
+  .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
   }
 }
 
-.label {
+.upper {
   text-transform: uppercase;
+}
+
+.bold {
   font-weight: 600;
-  font-size: 0.875em;
 }
 
 .dimmed {

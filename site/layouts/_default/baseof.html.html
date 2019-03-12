@@ -2,10 +2,9 @@
 <html lang="en-US" class="site" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <title>{{ if .IsPage }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
     {{ partial "og-general.html" . }}
     {{ partial "og-twitter.html" . }}
     {{ partial "gtm-script.html" . }}
