@@ -15,27 +15,25 @@ media_library:
     api_key: 252849228869977
 
 collections:
-  - label: "Published Posts"
+  - label: "Posts"
     label_singular: "Post"
-    name: "published_posts"
+    name: "posts"
     folder: "site/content/posts"
     create: true
-    filter: { field: "draft", value: false }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
-      - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Draft Posts"
-    label_singular: "Post"
-    name: "draft_posts"
-    folder: "site/content/posts"
+  - label: "Authors"
+    label_singular: "Author"
+    name: "authors"
+    folder: "site/content/authors"
     create: true
-    filter: { field: "draft", value: true }
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
-      - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Draft", name: "draft", widget: "boolean" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Bio", name: "body", widget: "markdown" }
