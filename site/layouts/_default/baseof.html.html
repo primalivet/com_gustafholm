@@ -11,17 +11,19 @@
 
     {{ $style := .Site.Data.webpack.main }}
     {{ with $style.css }}
-    <link rel="stylesheet" href="{{ relURL . }}" />
+      <link rel="stylesheet" href="{{ relURL . }}" />
     {{ end }}
   </head>
   <body class="{{ .Kind }}">
     {{ partial "gtm-noscript.html" }}
-    {{ block "main" . }}
-    {{ end }}
+
+    <nav class="upper bold dimmed"><a href="/">gustafholm.com</a></nav>
+
+    {{ block "main" . }}{{ end }}
 
     {{ $script := .Site.Data.webpack.main }}
     {{ with $script.js }}
-    <script async src="{{ relURL . }}"></script>
+      <script async src="{{ relURL . }}"></script>
     {{ end }}
 </body>
 </html>

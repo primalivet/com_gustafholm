@@ -6,7 +6,7 @@
         <span class="word-count upper bold dimmed"> &middot; {{ .WordCount }} words</span>
       </p>
       {{ with .Params.image }}
-      <img src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
+        <img src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
       {{ end }}
       {{ .Content }}
     </article>

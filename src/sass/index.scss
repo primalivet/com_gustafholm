@@ -96,7 +96,6 @@ ol ul {
 }
 
 img {
-  display: block;
   max-width: 100%;
 }
 
@@ -137,4 +136,8 @@ a {
 
 .dimmed {
   opacity: 0.5;
+}
+
+.mask-circle {
+  border-radius: 50%;
 }
