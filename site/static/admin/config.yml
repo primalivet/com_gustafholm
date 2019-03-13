@@ -15,27 +15,29 @@ media_library:
     api_key: 252849228869977
 
 collections:
-  - label: "Published Posts"
+  - label: "Posts"
     label_singular: "Post"
-    name: "published_posts"
+    name: "posts"
     folder: "site/content/posts"
     create: true
-    filter: { field: "draft", value: false }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
-      - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "relation", collection: "authors", searchField: ["title"], valueField: "title", required: true }
       - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Draft Posts"
-    label_singular: "Post"
-    name: "draft_posts"
-    folder: "site/content/posts"
+  - label: "Authors"
+    label_singular: "Author"
+    name: "authors"
+    folder: "site/content/authors"
     create: true
-    filter: { field: "draft", value: true }
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Name", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false, default: true }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "Git", name: "git", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Bio", name: "body", widget: "markdown", required: false }
