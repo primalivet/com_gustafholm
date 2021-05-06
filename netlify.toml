@@ -9,6 +9,6 @@
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
-  for = "/(sv\/)?posts/*"
+  for = "/(sv/)?posts/*"
   [headers.values]
     X-XSS-Protection = "1; mode=block"
