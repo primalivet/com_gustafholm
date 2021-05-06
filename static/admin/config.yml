@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: gitlab
+  repo: primalivet/com_gustafholm
  
 # site_url: https://gustafholm.com
 
