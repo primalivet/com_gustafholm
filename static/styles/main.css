@@ -1,13 +1,15 @@
-$white:  hsl(0,    0%,   100%);
-$black:  hsl(0,    0%,   0%);
-$lightgrey: hsl(0, 0%, 95%);
-$blue:   hsl(206,  69%,  48%);
-
-
-*,*:before,*:after {
-  box-sizing: border-box;
+:root {
+  --white: hsl(0,    0%,   100%);
+  --black: hsl(0,    0%,   0%);
+  --lightgrey: hsl(0, 0%, 95%);
+  --blue: hsl(206,  69%,  48%);
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 html {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
@@ -76,7 +78,7 @@ h4,h5,h6 { font-size: 1em; }
 hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background: $black;
+  background: var(--black);
   opacity: 0.15;
   height: 2px;
   border:none;
@@ -106,7 +108,7 @@ pre {
 
 pre,
 code {
-  background: $lightgrey;
+  background: var(--lightgrey);
 }
 
 blockquote {
@@ -114,7 +116,7 @@ blockquote {
 }
 
 a {
-  color: $black;
+  color: var(--black);
   text-decoration: underline hsla(0,0%,0%,0.25);
 }
 

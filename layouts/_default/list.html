@@ -2,10 +2,10 @@
   {{ range .Pages }}
   <article>
     <h2 class="upper"><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
-    <div class="meta">
-      <span class="date upper bold dimmed">{{.PublishDate.Format "2006-01-02" }}</span>
-      <span class="word-count upper bold dimmed"> &middot; {{ .WordCount }} words</span>
-    </div>
+    <p data-post-meta>
+      <span data-post-date class="upper bold dimmed">{{.PublishDate.Format "2006-01-02" }}</span>
+      <span data-post-wcount class="upper bold dimmed"> &middot; {{ .WordCount }} words</span>
+    </p>
     <p>
       {{ .Summary }} <a href="{{ .RelPermalink }}">Continue reading...</a>
     </p>

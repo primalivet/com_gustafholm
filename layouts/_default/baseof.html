@@ -1,0 +1,14 @@
+<!doctype html>
+<html dir="{{ .Param "dir" }}" lang="{{ .Param "code" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsPage }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/styles/main.css"/>
+  </head>
+  <body>
+    <nav class="upper bold dimmed"><a href="/">gustafholm.com</a></nav>
+    {{ block "main" . }}{{ end }}
+    <script type="module" async src="/scripts/main.js"></script>
+  </body>
+</html>

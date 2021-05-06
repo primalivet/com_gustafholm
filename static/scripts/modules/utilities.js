@@ -13,3 +13,11 @@ export const trace = l => x => {
   console.log(`l: ${x}`)
   return x
 }
+
+export const divide = x => y => y / x
+
+export const multiply = x => y => x * y
+
+export const ceil = x => Math.ceil(x)
+
+export const round = x => Math.round(x)

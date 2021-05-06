@@ -1,7 +1,4 @@
-import './sass/index.scss'
-import './sass/admin.scss'
-
-import { printArticleReadTime } from './modules/read-time'
+import { printArticleReadTime } from './modules/read-time.js'
 
 const main = () => {
   const articles = document.querySelectorAll('article')

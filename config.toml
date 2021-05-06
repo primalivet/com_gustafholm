@@ -1,0 +1,26 @@
+baseurl = "http://gustafholm.com/"
+title = "gustafholm.com"
+
+disableHugoGeneratorInject = true
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    contentDir = "content/english"
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      description = "Hej, I'm a developer. Hope you like what I write. You can also find me at twitter.com/primalivet"
+      code = "en-US"
+      dir = "ltr"
+
+  [languages.sv]
+    contentDir = "content/swedish"
+    languageName = "Swedish"
+    weight = 2
+    [languages.sv.params]
+      description = ""
+      code = "sv-SE"
+      dir = "ltr"

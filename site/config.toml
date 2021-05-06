@@ -1,6 +1,0 @@
-baseurl = "http://gustafholm.com/"
-languageCode = "en-us"
-title = "gustafholm.com"
-
-[params]
-  description = "Hej, I'm a developer. Hope you like what I write. You can also find me at twitter.com/primalivet"
