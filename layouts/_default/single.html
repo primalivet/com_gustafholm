@@ -1,28 +1,15 @@
 {{ define "main" }}
-    <article>
-      <h1 class="upper">{{ .Title }}</h1>
-      <p data-post-meta>
-        <span data-post-date class="upper bold dimmed">{{ .PublishDate.Format "2006-01-02" }}</span>
-        <span data-post-wcount class="upper bold dimmed"> &middot; {{ .WordCount }} words</span>
-      </p>
-      {{ with .Params.image }}
-      <img src="https://res.cloudinary.com/primalivet/image/upload/w_1200/h_675/{{ . }}">
-      {{ end }}
-      {{ .Content }}
-    </article>
+    {{ with .Param "image" }}
+        {{ $src := ($.Site.GetPage "uploads").Resources.GetMatch (strings.TrimPrefix
+        "/uploads/" . ) }}
 
-    <nav class="grid-2">
-      {{ with .PrevInSection }}
-      <div>
-        <span class="upper bold dimmed">Previous</span><br> 
-        <a href="{{.RelPermalink}}" rel="prev"> {{.Title}}</a>
-      </div>
-      {{ end }}
-      {{ with .NextInSection }}
-      <div>
-        <span class="upper bold dimmed">Next</span><br>
-        <a href="{{.RelPermalink}}" rel="next"> {{.Title}}</a>
-      </div>
-      {{ end }}
-    </nav>
+        {{ $.Scratch.Set "width" $src.Width }}
+        {{ $.Scratch.Set "height" $src.Height }}
+        {{ $.Scratch.Set "small"  ($src.Resize "500x") }}
+        {{ $.Scratch.Set "medium" ($src.Resize "1000x") }}
+        {{ $.Scratch.Set "large"  ($src.Resize "2000x") }}
+    {{ end }}
+
+    {{ partial "post-full.html" . }}
+    {{ partial "post-prev-next.html" . }}
 {{ end }}

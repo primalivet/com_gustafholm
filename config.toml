@@ -2,6 +2,7 @@ baseurl = "http://gustafholm.com/"
 title = "gustafholm.com"
 
 disableHugoGeneratorInject = true
+disableLiveReload = true
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
@@ -12,7 +13,7 @@ defaultContentLanguageInSubdir = false
     languageName = "English"
     weight = 1
     [languages.en.params]
-      description = "Hej, I'm a developer. Hope you like what I write. You can also find me at twitter.com/primalivet"
+      description = "Thoughs and notes by Gustaf Holm"
       code = "en-US"
       dir = "ltr"
 
@@ -21,6 +22,6 @@ defaultContentLanguageInSubdir = false
     languageName = "Swedish"
     weight = 2
     [languages.sv.params]
-      description = ""
+      description = "Tankar och antekningar av Gustaf Holm"
       code = "sv-SE"
       dir = "ltr"

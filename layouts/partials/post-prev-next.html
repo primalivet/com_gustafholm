@@ -1,0 +1,15 @@
+<h2>More articles</h2>
+<nav class="grid-2">
+  {{ with .PrevInSection }}
+  <div>
+    <span class="upper bold">Previous</span><br> 
+    <h3><a href="{{.RelPermalink}}" rel="prev"> {{.Title}}</a></h3>
+  </div>
+  {{ end }}
+  {{ with .NextInSection }}
+  <div>
+    <span class="upper bold">Next</span><br>
+    <h3><a href="{{.RelPermalink}}" rel="next"> {{.Title}}</a></h3>
+  </div>
+  {{ end }}
+</nav>
