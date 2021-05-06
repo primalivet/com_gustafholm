@@ -12,9 +12,22 @@
 
     <title>{{ if .IsPage }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
     <link preload media="screen" rel="stylesheet" href="/styles/main.css"/>
+    <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <nav class="upper bold"><a href="/"><small>gustafholm.com</small></a></nav>
     {{ block "main" . }}{{ end }}
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

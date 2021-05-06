@@ -1,37 +1,21 @@
 backend:
-  name: gitlab
+  name: git-gateway
   branch: master
-  repo: primalivet/com_gustafholm
+ 
+# site_url: https://gustafholm.com
 
-site_url: https://gustafholm.com
-media_folder: "site/static/images/uploads"
-public_folder: "/images/uploads"
-
-media_library:
-  name: cloudinary
-  output_filename_only: true
-  config:
-    cloud_name: primalivet
-    api_key: 252849228869977
+# media_folder is set to the uploads dir in english content as that makes
+# uploads available cross languages and enables hugo page bundle so that we can
+# use image resources for scaling etc.
+media_folder: "content/english/uploads"
 
 collections:
-  - label: "Posts"
-    label_singular: "Post"
-    name: "posts"
-    folder: "site/content/posts"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish date", name: "publishdate", widget: "datetime" }
-      - { label: "Draft", name: "draft", widget: "boolean" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Author", name: "author", widget: "relation", collection: "authors", searchField: ["title"], valueField: "title", required: true }
-      - { label: "Body", name: "body", widget: "markdown" }
-  - label: "Authors"
-    label_singular: "Author"
-    name: "authors"
-    folder: "site/content/authors"
-    create: true
+  - label: "Authors (en)"
+    label_singular: "Author (en)"
+    name: "authors_en"
+    folder: "content/english/authors"
+    create: false
+    slug: "{{slug}}"
     fields:
       - { label: "Name", name: "title", widget: "string" }
       - { label: "Publish date", name: "publishdate", widget: "datetime" }
@@ -41,3 +25,48 @@ collections:
       - { label: "Website", name: "website", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Bio", name: "body", widget: "markdown", required: false }
+
+  - label: "Authors (sv)"
+    label_singular: "Author (sv)"
+    name: "authors_sv"
+    folder: "content/swedish/authors"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false, default: true }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "Git", name: "git", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Bio", name: "body", widget: "markdown", required: false }
+
+  - label: "Posts (en)"
+    label_singular: "Post (en)"
+    name: "posts_en"
+    folder: "content/english/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "relation", collection: "authors_en", searchField: ["title"], valueField: "title", required: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - label: "Posts (sv)"
+    label_singular: "Post (sv)"
+    name: "posts_sv"
+    folder: "content/swedish/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "publishdate", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "relation", collection: "authors_sv", searchField: ["title"], valueField: "title", required: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
