@@ -5,10 +5,11 @@
 [build.environment]
   HUGO_VERSION = "0.82.1"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-  for = "/(sv/)?posts/*"
-  [headers.values]
-    X-XSS-Protection = "1; mode=block"
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     X-Content-Type-Options = "nosniff"
+# [[headers]]
+#   for = "/(sv/)?posts/*"
+#   [headers.values]
+#     X-XSS-Protection = "1; mode=block"
