@@ -17,17 +17,6 @@
   <body>
     <nav class="upper bold"><a href="/"><small>gustafholm.com</small></a></nav>
     {{ block "main" . }}{{ end }}
-
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <script src="/scripts/netlify-identity.js"></script>
   </body>
 </html>
