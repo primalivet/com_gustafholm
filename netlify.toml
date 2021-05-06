@@ -8,6 +8,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+  for = "/(sv\/)?posts/*"
+  [headers.values]
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self' netlify.com *.netlify.com"
