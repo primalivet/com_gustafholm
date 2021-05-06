@@ -1,0 +1,30 @@
+{{ $width := .Scratch.Get "width" }}
+{{ $height := .Scratch.Get "height" }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+
+<article>
+  <h1 class="upper">{{ .Title }}</h1>
+  <p data-post-meta class="upper bold">
+    <span data-post-meta-date>{{ .PublishDate.Format "2006-01-02" }}</span>
+    <span data-post-meta-wordcount> &middot; {{ .WordCount }} words</span>
+  </p>
+
+  {{ with .Params.image }}
+    <img 
+      width="{{ $width }}"
+      height="{{ $height }}"
+      src="{{ $medium.RelPermalink }}"
+      srcset="
+          {{ $small.RelPermalink }} 500w,
+          {{ $medium.RelPermalink }} 1000w,
+          {{ $large.RelPermalink }} 2000w
+      " 
+      sizes="(max-width: 42em) 100vw, 42em"
+
+      alt="Artwork for article {{ $.Page.Title }}"
+    />
+  {{ end }}
+  {{ .Content }}
+</article>

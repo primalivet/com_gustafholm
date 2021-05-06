@@ -1,14 +1,8 @@
 {{ define "main" }}
-  {{ range .Pages }}
-  <article>
-    <h2 class="upper"><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
-    <p data-post-meta>
-      <span data-post-date class="upper bold dimmed">{{.PublishDate.Format "2006-01-02" }}</span>
-      <span data-post-wcount class="upper bold dimmed"> &middot; {{ .WordCount }} words</span>
-    </p>
-    <p>
-      {{ .Summary }} <a href="{{ .RelPermalink }}">Continue reading...</a>
-    </p>
-    </article>
+  {{ range .Site.RegularPages }}
+    {{/* Only show posts on home page */}}
+    {{ if (and (eq .Kind "page") (eq .Type "posts") )}}
+      {{ partial "post-summary.html" . }}
+    {{ end }}
   {{ end }}
 {{ end }}

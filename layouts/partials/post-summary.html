@@ -1,0 +1,13 @@
+{{ $time := math.Round (div ( .WordCount ) 220.0) }}
+
+<article>
+  <h2 class="upper"><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
+  <p class="upper bold">
+    {{.PublishDate.Format "2006-01-02" }}
+     &middot; {{ .WordCount }} words
+     &middot; {{ $time }} {{ if lt $time 2 }}minute{{ else
+     }}minutes{{ end }}
+  </p>
+  <p>{{ .Summary }}</p> 
+  <p><a href="{{ .RelPermalink }}">Continue reading...</a></p>
+</article>

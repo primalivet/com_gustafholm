@@ -1,8 +1,16 @@
 :root {
   --white: hsl(0,    0%,   100%);
   --black: hsl(0,    0%,   0%);
-  --lightgrey: hsl(0, 0%, 95%);
-  --blue: hsl(206,  69%,  48%);
+
+  --grey: hsl(0, 0%, 15%);
+  --blue: hsl(206,  69%,  44%);
+  --purple: hsl(270, 69%, 44%);
+  --red: hsl(348, 69%, 44%);
+
+  --lightgrey: hsl(0, 0%, 90%); 
+  --lightblue: hsl(206,  69%,  64%);
+  --lightpurple: hsl(270, 69%, 64%);
+  --lightred: hsl(348, 69%, 64%);
 }
 
 *,
@@ -31,7 +39,18 @@ html {
 body {
   max-width: 42rem;
   margin: 2em;
+  background: var(--white);
+  color: var(--black);
 }
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--black);
+    color: var(--white);
+  }
+}
+
 
 @media screen and (min-width: 700px) {
   body {
@@ -99,6 +118,7 @@ ol ul {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 pre {
@@ -111,13 +131,45 @@ code {
   background: var(--lightgrey);
 }
 
+@media (prefers-color-scheme: dark) {
+  pre,
+  code {
+    background: var(--grey);
+  }
+}
+
 blockquote {
   font-style: italic;
 }
 
 a {
-  color: var(--black);
-  text-decoration: underline hsla(0,0%,0%,0.25);
+  color: var(--blue);
+}
+
+a:visited {
+  color: var(--purple);
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--red);
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--lightblue);
+  }
+
+  a:visited {
+    color: var(--lightpurple);
+  }
+
+  a:hover,
+  a:active,
+  a:focus {
+    color: var(--lightred);
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -134,12 +186,4 @@ a {
 
 .bold {
   font-weight: 600;
-}
-
-.dimmed {
-  opacity: 0.5;
-}
-
-.mask-circle {
-  border-radius: 50%;
 }
