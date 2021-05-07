@@ -2,15 +2,11 @@
 title: Setup Ale for Project Local Linting and Fixing in Vim
 publishdate: 2019-03-08T13:28:43.454Z
 draft: true
+author: Gustaf Holm
 ---
-
-Stuff like linting and fixing can be a hustle in any enviroment. In
-Vim, most humans tend to use [Ale](https://github.com/w0rp/ale), an async
-linting and fixing engine. Basically it's a plugin that looks for language
-specific command line linting and fixing tools.
+Stuff like linting and fixing can be a hustle in any enviroment. In Vim, most humans tend to use [Ale](https://github.com/w0rp/ale), an async linting and fixing engine. Basically it's a plugin that looks for language specific command line linting and fixing tools.
 
 {{< img src="reduce-filter-map.gif" alt="Artwork for Reduce, Filter, Map" caption="Read the article reduce filter map!" credit="Gustaf Holm" >}}
-
 
 ## Basic Ale setup
 
@@ -110,9 +106,11 @@ a `compose.json` for PHP packages and `.eslintrc` and `.prettierrc` together
 with a `package.json` to handle Javascript. Here are samples of those files
 
 ### `compose.json`
+
 This makes sure the needed PHP packages exists. You'll also need
 [Composer](https://getcomposer.org/) to
 install these packages.
+
 ```
 {
   "require-dev": {
@@ -124,8 +122,10 @@ install these packages.
 ```
 
 ### `package.json`
+
 This makes sure the needed Node packages exists. For this you'll need Node and
 NPM or Yarn.
+
 ```
 {
   "name": "example",
@@ -139,11 +139,12 @@ NPM or Yarn.
     "prettier": "^1.14.3"
   }
 }
-
 ```
 
 ### `.eslintrc`
+
 This uses the terrific [Standard JS](https://standardjs.com/) linting rules.
+
 ```
 {
 	"extends": "standard"
@@ -151,8 +152,10 @@ This uses the terrific [Standard JS](https://standardjs.com/) linting rules.
 ```
 
 ### `.prettierrc`
+
 This fixes the Javascript to use single quotes and no semi colons. How do you
 like it? haha :)
+
 ```
 {
 	"semi": false,
