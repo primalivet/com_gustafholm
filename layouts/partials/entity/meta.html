@@ -1,0 +1,11 @@
+{{ $time := math.Round (div ( .WordCount ) 220.0) }}
+
+<strong>{{ .WordCount }} {{ T "words" }}</strong> 
+
+{{ T "thatTakesAbout" }}
+
+<strong>{{ $time }} {{- if lt $time 2 -}}{{ T "minute" }}{{- else -}}{{ T "minutes" }}{{ end }}</strong>
+
+{{ T "toRead" }}, {{ T "published" }} 
+
+<strong><time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{- .PublishDate.Format "January 2, 2006" -}}</time></strong>.

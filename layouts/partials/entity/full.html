@@ -5,11 +5,8 @@
 {{ $large := .Scratch.Get "large" }}
 
 <article>
-  <h1 class="upper">{{ .Title }}</h1>
-  <p data-post-meta class="upper bold">
-    <span data-post-meta-date>{{ .PublishDate.Format "2006-01-02" }}</span>
-    <span data-post-meta-wordcount> &middot; {{ .WordCount }} words</span>
-  </p>
+  <h1 class="text upper">{{ .Title }}</h1>
+  <p class="text increase">{{ partial "entity/meta.html" . }}</p>
 
   {{ with .Params.image }}
     <img 

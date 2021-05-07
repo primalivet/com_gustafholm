@@ -39,8 +39,8 @@ html {
 body {
   max-width: 42rem;
   margin: 2em;
-  background: var(--white);
-  color: var(--black);
+  background: var(--almostwhite);
+  color: var(--almostblack);
 }
 
 
@@ -58,16 +58,10 @@ body {
   }
 }
 
+main,
 article,
 section {
-  margin: 2em 0;
-}
-
-@media screen and (min-width: 700px) {
-  article,
-  section {
-    margin: 4rem 0;
-  }
+  margin: 6em 0;
 }
 
 h1 { 
@@ -116,9 +110,15 @@ ol ul {
   padding-left: 1em;
 }
 
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 pre {
@@ -172,18 +172,22 @@ a:focus {
   }
 }
 
-@media screen and (min-width: 700px) {
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
-  }
-}
-
-.upper {
+.text.upper {
   text-transform: uppercase;
 }
 
-.bold {
+.text.bold {
   font-weight: 600;
+}
+
+.text.increase {
+  font-size: 1.25em;
+}
+
+.text.decrease {
+  font-size: 0.75em;
+}
+
+.text.max-width-75 {
+  max-width: 75%;
 }

@@ -1,8 +1,14 @@
 {{ define "main" }}
+  {{ with $.GetPage "posts" }}
+    <h1 class="text upper">{{ .Title }}</h1>
+    {{ with .Description }}
+      <p class="text increase max-width-75">{{ . }}</p>
+    {{ end }}
+  {{ end }}
   {{ range .Site.RegularPages }}
     {{/* Only show posts on home page */}}
     {{ if (and (eq .Kind "page") (eq .Type "posts") )}}
-      {{ partial "post-summary.html" . }}
+      {{ partial "entity/summary.html" . }}
     {{ end }}
   {{ end }}
 {{ end }}

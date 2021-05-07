@@ -1,0 +1,38 @@
+{{ $filename := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $caption := .Get "caption" }}
+{{ $credit := .Get "credit" }}
+{{ $src := ($.Site.GetPage "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" $filename ) }}
+
+{{ with $src }}
+
+  {{ $width := $src.Width }}
+  {{ $height := $src.Height }}
+  {{ $small := ($src.Resize "500x") }}
+  {{ $medium := ($src.Resize "1000x") }}
+  {{ $large := ($src.Resize "2000x") }}
+
+  <figure>
+    <img 
+      width="{{ $width }}"
+      height="{{ $height }}"
+      src="{{ $medium.RelPermalink }}"
+      srcset="
+          {{ $small.RelPermalink }} 500w,
+          {{ $medium.RelPermalink }} 1000w,
+          {{ $large.RelPermalink }} 2000w
+      " 
+      sizes="(max-width: 42em) 100vw, 42em"
+
+      alt="{{ $alt }}"
+    />
+    {{ with (or $caption $credit) }}
+    <figcaption>
+      {{ $caption }} 
+      {{ with $credit }}
+        <span>{{ T "photo" | title }}: {{ $credit }}</span>
+      {{ end }}
+    </figcaption>
+    {{ end }}
+  </figure>
+{{ end }}

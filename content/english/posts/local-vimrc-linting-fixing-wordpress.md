@@ -9,6 +9,9 @@ Vim, most humans tend to use [Ale](https://github.com/w0rp/ale), an async
 linting and fixing engine. Basically it's a plugin that looks for language
 specific command line linting and fixing tools.
 
+{{< img src="reduce-filter-map.gif" alt="Artwork for Reduce, Filter, Map" caption="Read the article reduce filter map!" credit="Gustaf Holm" >}}
+
+
 ## Basic Ale setup
 
 First, install the Ale plugin. After that, I like the following to global

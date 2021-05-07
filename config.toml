@@ -2,7 +2,7 @@ baseurl = "http://gustafholm.com/"
 title = "gustafholm.com"
 
 disableHugoGeneratorInject = true
-disableLiveReload = true
+# disableLiveReload = true # disable to test lighthouse locally
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false

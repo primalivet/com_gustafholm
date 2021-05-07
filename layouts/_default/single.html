@@ -1,15 +1,17 @@
 {{ define "main" }}
     {{ with .Param "image" }}
-        {{ $src := ($.Site.GetPage "uploads").Resources.GetMatch (strings.TrimPrefix
-        "/uploads/" . ) }}
+        {{ $src := ($.Site.GetPage "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
+
+        {{ with $src }}
 
         {{ $.Scratch.Set "width" $src.Width }}
         {{ $.Scratch.Set "height" $src.Height }}
         {{ $.Scratch.Set "small"  ($src.Resize "500x") }}
         {{ $.Scratch.Set "medium" ($src.Resize "1000x") }}
         {{ $.Scratch.Set "large"  ($src.Resize "2000x") }}
+        {{ end }}
     {{ end }}
 
-    {{ partial "post-full.html" . }}
-    {{ partial "post-prev-next.html" . }}
+    {{ partial "entity/full.html" . }}
+    {{ partial "entity/prev-next.html" . }}
 {{ end }}
