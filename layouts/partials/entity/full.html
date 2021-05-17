@@ -1,12 +1,14 @@
 {{ $width := .Scratch.Get "width" }}
 {{ $height := .Scratch.Get "height" }}
+{{ $tiny := .Scratch.Get "tiny" }}
 {{ $small := .Scratch.Get "small" }}
 {{ $medium := .Scratch.Get "medium" }}
 {{ $large := .Scratch.Get "large" }}
+{{ $huge := .Scratch.Get "huge" }}
 
 <article>
-  <h1 class="text upper">{{ .Title }}</h1>
-  <p class="text increase">{{ partial "entity/meta.html" . }}</p>
+  <h1 class="upper">{{ .Title }}</h1>
+  <p class="increase">{{ partial "entity/meta.html" . }}</p>
 
   {{ with .Params.image }}
     <img 
@@ -14,9 +16,11 @@
       height="{{ $height }}"
       src="{{ $medium.RelPermalink }}"
       srcset="
-          {{ $small.RelPermalink }} 500w,
-          {{ $medium.RelPermalink }} 1000w,
-          {{ $large.RelPermalink }} 2000w
+          {{ $tiny.RelPermalink }} 400w,
+          {{ $small.RelPermalink }} 600w,
+          {{ $medium.RelPermalink }} 800w,
+          {{ $large.RelPermalink }} 1000w,
+          {{ $huge.RelPermalink }} 1500w
       " 
       sizes="(max-width: 42em) 100vw, 42em"
 

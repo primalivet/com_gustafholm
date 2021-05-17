@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ with $.GetPage "posts" }}
-    <h1 class="text upper">{{ .Title }}</h1>
+    <h1 class="upper">{{ .Title }}</h1>
     {{ with .Description }}
-      <p class="text increase max-width-75">{{ . }}</p>
+      <p class="increase max-width-75">{{ . }}</p>
     {{ end }}
   {{ end }}
   {{ range .Site.RegularPages }}

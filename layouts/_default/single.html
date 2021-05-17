@@ -6,9 +6,11 @@
 
         {{ $.Scratch.Set "width" $src.Width }}
         {{ $.Scratch.Set "height" $src.Height }}
-        {{ $.Scratch.Set "small"  ($src.Resize "500x") }}
-        {{ $.Scratch.Set "medium" ($src.Resize "1000x") }}
-        {{ $.Scratch.Set "large"  ($src.Resize "2000x") }}
+        {{ $.Scratch.Set "tiny"  ($src.Resize "400x") }}
+        {{ $.Scratch.Set "small" ($src.Resize "600x") }}
+        {{ $.Scratch.Set "medium"  ($src.Resize "800x") }}
+        {{ $.Scratch.Set "large"  ($src.Resize "1000x") }}
+        {{ $.Scratch.Set "huge"  ($src.Resize "1500x") }}
         {{ end }}
     {{ end }}
 

@@ -15,14 +15,12 @@
   </head>
   <body>
     <header role="banner">
-      <div>
-        <a class="decrease" href="#main">Skip to content</a><br />
-        <a class="text upper bold decrease" href="/">gustafholm.com</a>
-      </div>
+        <a href="#main">Skip to content</a>
+        <a class="upper bold" href="/">gustafholm.com</a>
     </header>
     <main role="main" id="main">{{ block "main" . }}{{ end }}</main>
     <footer role="contentinfo">
-      <p class="text bold">{{ T "noCookies" | emojify }}</p>
+      <p class="bold">{{ T "noCookies" | emojify }}</p>
     </footer>
   </body>
 </html>
