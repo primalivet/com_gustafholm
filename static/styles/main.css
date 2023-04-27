@@ -3,7 +3,7 @@
   --black: #000000;
 
   --almost-white: #f5f5f5;
-  --almost-black: #111111;
+  --almost-black: #535353;
 
   --dark-yellow: hsl(49, 100%, 15%);
 
@@ -26,11 +26,11 @@
 
   --theme-color-page-background: var(--white);
   --theme-color-headers: var(--black);
-  --theme-color-text: var(--black);
+  --theme-color-text: var(--almost-black);
   --theme-color-link: var(--blue);
   --theme-color-link-focus: var(--red);
   --theme-color-link-visited: var(--purple);
-  --theme-color-code: var(--black);
+  --theme-color-code: var(--almost-black);
   --theme-color-code-background: var(--almost-white);
   --theme-color-card: var(--black);
   --theme-color-card-background: var(--almost-white);
@@ -68,13 +68,7 @@ html {
 
 @media screen and (min-width: 700px) {
   html {
-    font-size: 1.25rem;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -116,8 +110,13 @@ section {
 
 p,
 .p {
-  font-size: 1rem;
+  font-size: 1em;
   margin: 1em 0;
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+  color: var(--theme-color-headers);
 }
 
 h1,
@@ -178,33 +177,6 @@ h6,
     font-size: 1.125em; 
   }
 }
-
-@media screen and (min-width: 1000px) {
-  h1,
-  .h1 { 
-    font-size: 2.25em; 
-  }
-
-  h2,
-  .h2 { 
-    font-size: 1.75em; 
-  }
-
-  h3,
-  .h3 { 
-    font-size: 1.5em; 
-  }
-
-  h4,
-  h5,
-  h6, 
-  .h4,
-  .h5,
-  .h6 { 
-    font-size: 1.25em; 
-  }
-}
-
 
 hr {
   margin-top: 2rem;
@@ -279,6 +251,10 @@ a:focus {
   font-size: 1.25em;
 }
 
+.dimmed {
+  opacity: 0.5;
+}
+
 .decrease {
   font-size: 0.75em;
 }
@@ -314,65 +290,4 @@ a:focus {
 
 [role="contentinfo"] {
   text-align: center;
-}
-
-/*
- * Markup card
- * ---
- * .card[.float.left|.float.right]
- *    div
- *      img
- *      h2>a
- *      p
- */
-
-.card {
-  position: relative;
-  background: var(--theme-color-card-background);
-}
-
-.card:focus-within {
-  outline-color: var(--theme-color-focus-outline);
-  outline-style: var(--focus-outline-style);
-  outline-width: var(--focus-outline-width);
-  outline-offset: var(--focus-outline-offset);
-
-}
-
-.card:focus-within a {
-  outline: none;
-}
-
-.card * {
-  margin: 0;
-}
-
-.card div {
-  padding: .5rem;
-}
-
-@media screen and (min-width: 400px) {
-  .card.float.left {
-    float: left;
-    max-width: 50%;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .card.float.right {
-    float: right;
-    max-width: 50%;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .card.float.left {
-    max-width: 300px;
-  }
-
-  .card.float.right {
-    max-width: 300px;
-  }
 }

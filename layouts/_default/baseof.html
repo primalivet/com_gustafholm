@@ -12,11 +12,12 @@
 
     <title>{{ if .IsPage }} {{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
     <link preload media="screen" rel="stylesheet" href="/styles/main.css"/>
+    <link preload media="screen" rel="stylesheet" href="/styles/pygments.css"/>
   </head>
   <body>
     <header role="banner">
-        <a href="#main">Skip to content</a>
-        <a class="upper bold" href="/">gustafholm.com</a>
+      <a class="dimmed decrease" href="#main">Skip to content</a>
+      <a class="upper bold" href="/">gustafholm.com</a>
     </header>
     <main role="main" id="main">{{ block "main" . }}{{ end }}</main>
     <footer role="contentinfo">

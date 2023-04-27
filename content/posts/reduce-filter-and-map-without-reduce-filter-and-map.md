@@ -14,7 +14,7 @@ Then `.map()` method on `Array` runs every item in an array through a given call
 
 The simplest version of `map()` I could think of looks like this.
 
-```
+```js
 function map(array, cb) {
   const result = [];
   for (let i = 0; i < array.length; i += 1 {      
@@ -35,7 +35,7 @@ Very straight forward here.
 
 Run it
 
-```
+```js
 map([1, 2, 3, 4, 5], item => item + 1); // [2, 3, 4, 5, 6]
 ```
 
@@ -45,7 +45,7 @@ The `.filter()` method on `Array` also runs every item in a given array against 
 
 The implementation of `filter()` is almost the same thing as `map()`.
 
-```
+```js
 function filter(array, cb) {
   const result = [];
   for (let i = 0; i < array.length; i += 1) {
@@ -61,7 +61,7 @@ The difference here, in comparison to `map()` is that the callback function `cb`
 
 Call it.
 
-```
+```js
 filter([1, 2, 3, 4, 5], item => item >= 3); // [3, 4, 5]
 ```
 
@@ -71,7 +71,7 @@ The `.reduce()` method is the `Array` multi tool and can be used in lots of scen
 
 Being the multi tool, you might think the implementation is very different from `filter()` and `map()`. But it’s not. Along with the `array` and `cb` arguments I also pass the `initialValue`.
 
-```
+```js
 function reduce(array, cb, initialValue) {
   let result = initialValue;
   for (let i = 0; i < array.length; i += 1) {
@@ -91,7 +91,7 @@ You’ve probably figured it all out already. But I’ll run through it anyway.
 
 Here’s how to call it.
 
-```
+```js
 reduce([1, 2, 3, 4, 5], (result, item) => {
   result.push(item * 2);
   return result;
@@ -100,7 +100,7 @@ reduce([1, 2, 3, 4, 5], (result, item) => {
 
 And here’s the same call but where I’ve broken out the callback for some clarity.
 
-```
+```js
 const cb = (result, item) => {
   result.push(item * 2);
   return result;
@@ -114,7 +114,7 @@ Since `reduce()` is so flexible, you can use it to create your own `map()` and `
 
 ### Map with Reduce
 
-```
+```js
 function map(array, func) {
   return reduce(array, function (result, item) {
     result.push(func(item));
@@ -127,13 +127,13 @@ I’m sure you can figure out what changed yourself, it works the same as our fi
 
 Call it the same way as before.
 
-```
+```js
 map([1, 2, 3, 4, 5], item => item + 1) // [ 2, 3, 4, 5, 6 ]
 ```
 
 Here’s a more modern version with arrow functions, implicit return and `.concat()`.
 
-```
+```js
 const map = (array, func) =>
   reduce(array, (result, item) =>
     result.concat(func(item)), []);
@@ -141,7 +141,7 @@ const map = (array, func) =>
 
 ### Filter with Reduce
 
-```
+```js
 function filter(array, func) {
   return reduce(array, function (result, item) {
     if (func(item)) {
@@ -155,13 +155,13 @@ function filter(array, func) {
 
 This one you can figure out yourself, so I’ll leave you to it. It’s kind of the same changes as in the previous `map()` with `reduce()`. Also call this the same way as we called our first `filter()`.
 
-```
+```js
 filter([1, 2, 3, 4, 5], item => item >= 3); // [ 3, 4, 5 ]
 ```
 
 And a more modern version of this can look like.
 
-```
+```js
 const filter = (array, func) =>
   reduce(array, (result, item) =>
     func(item) ? result.concat(item) : result, []);
@@ -171,7 +171,7 @@ const filter = (array, func) =>
 
 The only things I did here was switching the declaration to a functional expression using a arrow function and replaced the for loop with the `.forEach()` method. Very basic.
 
-```
+```js
 const reduce = (array, cb, initialValue) => {
   let result = initialValue;
   array.forEach(item =>

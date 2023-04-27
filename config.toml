@@ -1,27 +1,17 @@
 baseurl = "http://gustafholm.com/"
 title = "gustafholm.com"
+summaryLength = 30
 
-disableHugoGeneratorInject = true
-disableLiveReload = true # disable to test lighthouse/axe locally
-
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
-
-[languages]
-  [languages.en]
-    contentDir = "content/english"
-    languageName = "English"
-    weight = 1
-    [languages.en.params]
-      description = "Thoughs and notes by Gustaf Holm"
-      code = "en-US"
-      dir = "ltr"
-
-  [languages.sv]
-    contentDir = "content/swedish"
-    languageName = "Swedish"
-    weight = 2
-    [languages.sv.params]
-      description = "Tankar och antekningar av Gustaf Holm"
-      code = "sv-SE"
-      dir = "ltr"
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "pygments"
+    tabWidth = 4

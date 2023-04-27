@@ -1,5 +1,5 @@
 backend:
-  name: gitlab
+  name: github
   repo: primalivet/com_gustafholm
  
 # site_url: https://gustafholm.com

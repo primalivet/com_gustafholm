@@ -11,7 +11,7 @@ It’s not often, but once in a while I want to resize a window in [Vim](https:/
 
 So in Vim I use the default bindings for resizing buffers. But I’ve tweaked them a bit 😏. The only thing I’ve done is to rebind the keys in whatever mode, so just `noremap`, to increase and decrease by 5 instead of the default 1.
 
-```
+```vim
 noremap <C-w>+ :resize +5<CR>
 noremap <C-w>- :resize -5<CR>
 noremap <C-w>< :vertical:resize -5<CR>
@@ -24,7 +24,7 @@ More info in Vim help system at `:h window-resize`.
 
 In Tmux I bind the same keys used in Vim (now with Tmux prefix obviously, I use `Ctrl+A` like most others). Here I change the value by 10 instead of 5. Only reason for this is that it feels right. I think the system are in columns and rows or something, but that doesn’t really matter.
 
-```
+```bash
 bind-key -r ‘+’ resize-pane -U 10
 bind-key -r ‘-’ resize-pane -D 10
 bind-key -r ‘<’ resize-pane -L 10
